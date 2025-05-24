@@ -3,7 +3,7 @@ import BradyPhotoCarousel from './BradyPhotoCarousel'
 
 const WhoWeAre = () => {
   return (
-    <div className='who-we-are-section flex w-full justify-between items-center mb-24 px-10'>
+    <div className='who-we-are-section flex w-full justify-between items-center mb-24 px-10' id="brady">
 
         <div className='who-we-are-copy w-[45%]'>
             <h1 className='mb-10 '>

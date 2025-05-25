@@ -1,12 +1,11 @@
 import React from 'react'
-import BigHeader from './BigHeader'
 
 const ProjectSection = () => {
   return (
-    <div className='project-section-full w-full' id="project">
+    <div className='project-section-full w-full mb-24' id="project">
         
         {/* <div className="project-delineator" id="project" /> */}
-        <BigHeader text={"PROJECT"} />
+        {/* <BigHeader text={"PROJECT"} /> */}
 
         <div className='project-section-body px-10 flex flex-col items-center'>
 

@@ -37,7 +37,7 @@ const NewsCarousel = () => {
         <Carousel
             opts={{
                 loop : true,
-                align : "start"
+                // align : "start"
             }}
             className="w-full  p-10 "
         >

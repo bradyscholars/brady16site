@@ -8,13 +8,17 @@ const CAndWSection = () => {
     <div className='c-and-w-section flex flex-col w-full items-center mb-24' id="candw">
 
         {/* <div className="candw-delineator" id="candw" /> */}
-        <BigHeader text={"C&W FOUNDATION"}/>
+        {/* <BigHeader text={"C&W FOUNDATION"}/> */}
 
         <div className='c-and-w-copy w-full flex justify-between items-center px-10 '>
 
+            <div className='b-and-w-photo w-[45%] h-full'>
+                <img className='w-full object-cover ' src='/images/blank.jpg' />
+            </div>
+
             <div className='c-and-w-copy w-[45%]'>
                 <h1 className='mb-10 '>
-                    C&W
+                    THE C&W FOUNDATION
                 </h1>
 
                 <p className=''>
@@ -23,9 +27,7 @@ const CAndWSection = () => {
                 </p>
             </div>
 
-            <div className='b-and-w-photo w-[45%] h-full'>
-                <img className='w-full object-cover ' src='/images/blank.jpg' />
-            </div>
+            
 
         </div>
 

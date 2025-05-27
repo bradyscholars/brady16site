@@ -3,7 +3,7 @@ import React from 'react'
 const ProjectDetails = () => {
 
   return (
-    <div id="project-details" className="bg-white py-16 px-4">
+    <div id="project-details" className="bg-white mb-24 px-4" >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
             {/* Requirements List */}
             <div>

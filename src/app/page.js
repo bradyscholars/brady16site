@@ -3,6 +3,7 @@ import CAndWSection from "@/components/CAndWSection";
 import ProjectDetails from "@/components/ProjectDetails";
 import ProjectSection from "@/components/ProjectSection";
 import WhoWeAre from "@/components/WhoWeAre";
+import HomePageGetInvolved from "@/components/HomePageGetInvolved";
 
 
 export default function Home() {
@@ -20,6 +21,8 @@ export default function Home() {
       <ProjectSection />
 
       <ProjectDetails />
+
+      <HomePageGetInvolved />
 
       <Footer />
 

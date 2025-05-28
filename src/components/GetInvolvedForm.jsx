@@ -3,7 +3,7 @@ import React from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 // import * as ReactHookForm from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
-// import {useForm} from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import { z } from 'zod';
 import { 
     Form,
@@ -14,6 +14,9 @@ import {
     FormLabel,
     FormMessage,
  } from './ui/form'
+import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
+import { Button } from './ui/button';
 
 // const { useForm } = ReactHookForm;
 
@@ -39,22 +42,41 @@ const GetInvolvedForm = () => {
 
     
 
-    // const {register, handleSubmit, formState : { errors }} = useForm({
-    //     resolver : zodResolver(formSchema),
-    //     defaultValues : {
-    //         firstName : '',
-    //         lastName : '',
-    //         email : '',
-    //         phone : '',
-    //         comments : '',
-    //         pledgeAmount : 0
-    //     },
+    const form = useForm({
+        resolver : zodResolver(formSchema),
+        defaultValues : {
+            firstName : '',
+            lastName : '',
+            email : '',
+            phone : '',
+            comments : '',
+            pledgeAmount : 0
+        },
 
-    // });
+    });
 
-    const handleSubmitLocal = (values) => {
-        // do nothing right now
-        return;
+    const handleSubmitLocal = async (values) => {
+
+      // set a state indicating work is in progress
+      // console.log(`trying to send email with : \n ${JSON.stringify(values)}`)
+
+      // send the email over the api
+      const succ = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      });
+
+
+      // if succ has statuscode 200, indicate success
+
+
+      // if succ has statuscode 500 (or anything but 200) -- indicae failure
+      console.log(succ.status, succ.text);
+
+        
     }
 
   return (
@@ -74,10 +96,103 @@ const GetInvolvedForm = () => {
         {/* intake form in the card */}
         <CardContent>
 
-            <Form >
-                <form onSubmit={handleSubmitLocal} className="space-y-6">
+            <Form {...form}>
+                <form onSubmit={form.handleSubmit(handleSubmitLocal)} className="space-y-6 pr-10">
+
+                  {/* first and last name side by side */}
+                  <div className="flex w-full justify-start items-end gap-2">
+
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({field}) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="First name" {...field} />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({field}) => (
+                        <FormItem>
+                          {/* <FormLabel>Last Name</FormLabel> */}
+                          <FormControl>
+                            <Input placeholder="Last name" {...field} />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+
+                  </div>
+
+                  {/* email  */}
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({field}) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="john@example.com" {...field} />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* phone  */}
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({field}) => (
+                      <FormItem>
+                        <FormLabel>Phone</FormLabel>
+                        <FormControl>
+                          <Input type="tel" placeholder="(opitional)" {...field} />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* comments  */}
+
+                  <FormField
+                    control={form.control}
+                    name="comments"
+                    render={({ field }) => (
+                      <FormItem>
+                        {/* <FormLabel>Comments</FormLabel> */}
+                        <FormControl>
+                          <Textarea placeholder="Any additional comments..." {...field} className="resize-none"/>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
 
+                  {/* PLEDGE  */}
+                  <FormField
+                    control={form.control}
+                    name="pledgeAmount"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Pledge Amount ($)</FormLabel>
+                        <FormControl>
+                          <Input type="number" min="0" step="1" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className='submit-button w-full flex justify-center py-3'>
+                    <Button type="submit" className="bg-green-800 hover:bg-green-900 px-5 py-5 rounded-full text-base font-medium shadow-md">Submit Pledge</Button>
+                  </div>
 
                 </form>
             </Form>

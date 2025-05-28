@@ -5,12 +5,13 @@ sgMail.setApiKey(apiKey);
 
 export async function sendEmail({firstName, lastName, email, phone, comments, pledgeVal}) {
 
+    console.log()
     const message = `
-        You have received a new pledge from ${firstName} ${lastName}. \n\n
-        ${firstName} ${lastName} has pledged $${pledgeVal}${comments ? `, with the comments : ${comments}` : '.'}\n\n
+        You have received a new pledge from ${firstName} ${lastName}. \n
+        ${firstName} ${lastName} has pledged $${pledgeVal}${comments ? `, with the comments : ${comments}` : '.'}\n
         
-        ${firstName} ${lastName}\n
-        ${email}\n
+        ${firstName} ${lastName}
+        ${email}
         ${phone ? phone : ""}
     `;
 

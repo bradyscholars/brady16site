@@ -31,7 +31,7 @@ const formSchema = z.object({
 
     comments : z.string().optional(),
 
-    pledgeAmount : z.coerce.number().min(0)
+    pledgeVal : z.coerce.number().min(0)
 
 
 });
@@ -50,7 +50,7 @@ const GetInvolvedForm = () => {
             email : '',
             phone : '',
             comments : '',
-            pledgeAmount : 0
+            pledgeVal : 0
         },
 
     });
@@ -69,6 +69,7 @@ const GetInvolvedForm = () => {
         body: JSON.stringify(values)
       });
 
+      form.reset();
 
       // if succ has statuscode 200, indicate success
 
@@ -178,7 +179,7 @@ const GetInvolvedForm = () => {
                   {/* PLEDGE  */}
                   <FormField
                     control={form.control}
-                    name="pledgeAmount"
+                    name="pledgeVal"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Pledge Amount ($)</FormLabel>

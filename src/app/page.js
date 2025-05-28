@@ -13,7 +13,8 @@ export default function Home() {
 
       {/* <div className="brady-delineator" id="brady" /> */}
       {/* <BigHeader text={"LET'S BUILD TOGETHER"}  /> */}
- 
+      
+      <HomePageGetInvolved />
 
       <WhoWeAre />
 
@@ -23,7 +24,6 @@ export default function Home() {
 
       <ProjectDetails />
 
-      <HomePageGetInvolved />
 
       <Footer />
 

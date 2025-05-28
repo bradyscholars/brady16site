@@ -17,9 +17,13 @@ export default function Home() {
 
       <HomePageGetInvolved />
 
-      <WhoWeAre />
+      <div className="arrow-connector max-w-[30%] max-h-[30%] ml-16 rotate-12">
+        <img className="object-fill " src="/images/arrow.png" loading="eager" />
+      </div>
 
       <CAndWSection />
+
+      <WhoWeAre />
 
       <ProjectSection />
 

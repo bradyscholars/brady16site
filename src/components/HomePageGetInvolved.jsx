@@ -14,10 +14,10 @@ const HomePageGetInvolved = () => {
 
   return (
 
-    <div className='about-the-project-section-full w-full px-10 mb-24'>
+    <div className='about-the-project-section-full w-full px-10'>
 
       <h1 className='m-0 p-0 font-black text-[5rem]'>OUR PROJECT</h1>
-      <h5 className='text-gray-600 m-0 p-0 mb-4'>Brady Scholars 16</h5>
+      <h5 className='text-gray-600 m-0 p-0 mb-10'>Brady Scholars 16</h5>
 
       <div className='about-the-project-copy grid grid-cols-12 grid-rows-3 gap-4'>
 
@@ -35,7 +35,7 @@ const HomePageGetInvolved = () => {
           </Card>
         </div>
 
-        <div className='project-card-2 h-full col-span-5 row-span-3'>
+        <div className='project-card-2 h-full col-span-4 row-span-3'>
           <Card className="h-full">
             <CardHeader>
               <CardTitle>
@@ -49,7 +49,7 @@ const HomePageGetInvolved = () => {
           </Card>
         </div>
 
-        <div className='get-involved-button col-span-2 row-span-1 row-start-3 col-start-11'>
+        <div className='get-involved-button col-span-3 row-span-1 row-start-3 col-start-10 ml-5'>
           <Button className='bg-green-800 hover:bg-green-900 shadow-lg w-full h-1/2  px-10 py-6 rounded-full mt-10' onClick={handleClick}>
               <p className='text-white text-lg m-0 p-0 font-medium'>Get Involved →</p>
           </Button>

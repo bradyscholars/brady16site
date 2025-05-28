@@ -17,12 +17,16 @@ const NavBar = () => {
     const sections = [
         
         {
-            name : "Who Are We?",
-            path : "brady"
+            name : "Home",
+            path : "top"
         },
         {
             name : "C&W",
             path : "candw"
+        },
+        {
+            name : "Who Are We?",
+            path : "brady"
         },
         {
             name : "Our Project",
@@ -40,6 +44,17 @@ const NavBar = () => {
             router.push("/get-involved");
             return;
         }
+
+        if (section === "top") {
+
+            if (pathname !== "/") {
+                router.push("/");
+                return;
+            }
+
+            window.scrollTo({top : 0, behavior : "smooth"});
+            return;
+        }
     
         if (pathname !== "/") {
             // Navigate home first
@@ -49,13 +64,21 @@ const NavBar = () => {
             setTimeout(() => {
                 const el = document.getElementById(section);
                 if (el) {
-                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    // el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    window.scrollTo({
+                        top: el.offsetTop - 100,
+                        behavior: "smooth"
+                    });
                 }
             }, 100); // slightly more than 0 to ensure hydration
         } else {
             const el = document.getElementById(section);
             if (el) {
-                el.scrollIntoView({ behavior: "smooth", block: "start" });
+                // el.scrollIntoView({ behavior: "smooth", block: "start" });
+                window.scrollTo({
+                    top: el.offsetTop - 100,
+                    behavior: "smooth"
+                });
             }
         }
     }
@@ -73,6 +96,12 @@ const NavBar = () => {
           // Use viewport midpoint to decide “current” section
 
           const midpoint = window.scrollY + window.innerHeight / 2;
+
+          if (window.scrollY < 50) {
+            setActiveSection("top");
+            return;
+          }
+
           let current = sections[0].path;
     
           for (const section of sections) {
@@ -82,7 +111,7 @@ const NavBar = () => {
             }
             const el = document.getElementById(section.path);
             if (!el) continue;
-            const top = el.offsetTop;
+            const top = el.offsetTop - 100;
             if (top <= midpoint) {
               current = section.path;
             } else {
@@ -134,13 +163,13 @@ const NavBar = () => {
                     onClick={() => handleClick(section.path)}
                     className={`relative text-sm font-medium ${
                     activeSection === section.path || (section.path === "get-involved" && isGetInvolved)
-                        ? "text-blue-500"
-                        : "text-grey-800 hover:text-blue-500"
+                        ? "text-green-700"
+                        : "text-grey-800 hover:text-green-700"
                     }`}
                 >
                     {section.name}
                     {(activeSection === section.path || (section.path === "get-involved" && isGetInvolved)) && (
-                    <div className="absolute bottom-[-2px] left-0 w-full h-[2px] bg-blue-400"></div>
+                    <div className="absolute bottom-[-2px] left-0 w-full h-[2px] bg-green-700"></div>
                     )}
                 </button>
                 ))}

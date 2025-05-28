@@ -16,7 +16,7 @@ export async function sendEmail({firstName, lastName, email, phone, comments, pl
     `;
 
     const msg = {
-        to: 'theomaurino2026@u.northwestern.edu',
+        to: 'bradyscholars16@gmail.com',
         from: 'no-reply@brady16s.org', // works because domain is authenticated
         subject: `NEW PLEDGE FROM ${firstName}`,
         replyTo: email,

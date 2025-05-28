@@ -119,10 +119,12 @@ const NavBar = () => {
 
 
   return (
-    <div className='w-full flex items-center justify-center fixed top-5 z-50'>
+    <div className='w-full flex items-center justify-center  fixed top-5 z-40  '>
 
+        <div className='decoration-bar bg-[#364e38] w-[50%] h-[5px] fixed z-40 top-13'></div>
 
-        <nav className="flex z-50 items-center bg-white px-4 md:px-10 py-3 border border-gray-100 rounded-full shadow-lg mx-auto mt-6">
+        {/* <nav className="flex z-50 items-center bg-white px-4 md:px-10 py-3 border border-gray-100 rounded-full shadow-lg mx-auto my-3"> */}
+        <nav className='flex z-50 items-center px-4 md:px-10 py-1 mx-auto my-3'>
 
             {/* <h1 className='text-sm mr-4 mb-4'>The Brady Scholars</h1> */}
 
@@ -132,16 +134,16 @@ const NavBar = () => {
                 <button
                     key={section.path}
                     onClick={() => handleClick(section.path)}
-                    className={`relative text-sm font-medium ${
+                    className={`relative text-sm font-medium px-3 py-2 bg-white border rounded-lg transition-all duration-500 ease-in-out ${
                     activeSection === section.path || (section.path === "get-involved" && isGetInvolved)
-                        ? "text-blue-500"
-                        : "text-grey-800 hover:text-blue-500"
+                        ? "text-green-800 border-4 border-green-900" 
+                        : "text-gray-900 hover:text-green-800"
                     }`}
                 >
                     {section.name}
-                    {(activeSection === section.path || (section.path === "get-involved" && isGetInvolved)) && (
+                    {/* {(activeSection === section.path || (section.path === "get-involved" && isGetInvolved)) && (
                     <div className="absolute bottom-[-2px] left-0 w-full h-[2px] bg-blue-400"></div>
-                    )}
+                    )} */}
                 </button>
                 ))}
             </div>

@@ -16,7 +16,7 @@ const Footer = () => {
         <div className='actual-site-footer w-[40%] py-2 bg-white rounded-md shadow-md px-8 flex justify-between items-center border border-gray-100'>
 
             <div className='brady-copyright '>
-                <p className='font-bold text-sm my-0 '>© 2025 <span className="text-blue-500">The Brady Scholars</span></p>
+                <p className='font-bold text-sm my-0 '>© 2025 <span className="text-green-600">The Brady Scholars</span></p>
             </div>
 
             <div className='links flex gap-5 items-center justify-center '>

@@ -14,6 +14,10 @@ export default function Home() {
       {/* <div className="brady-delineator" id="brady" /> */}
       {/* <BigHeader text={"LET'S BUILD TOGETHER"}  /> */}
 
+      <div className="absolute w-[4%] bg-green-900 h-full opacity-50 right-8 top-0"></div>
+      <div className="absolute w-[1%] bg-green-900 h-full opacity-50 right-2 top-0"></div>
+
+
       <WhoWeAre />
 
       <CAndWSection />

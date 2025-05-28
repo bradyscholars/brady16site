@@ -16,6 +16,8 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 1.5em 0 0.5em;
   line-height: 1.4;
   font-family: system-ui, sans-serif;
+  /* font-family :Arial, Helvetica, sans-serif; */
+  color : rgb(19, 36, 14);
 }
 
 h1 {
@@ -50,7 +52,9 @@ h6 {
 
 p {
   font-size: 1.25rem;
-  color : oklch(44.6% 0.03 256.802);
+  /* color : oklch(44.6% 0.03 256.802); */
+  /* color : oklch(55.1% 0.027 264.364); */
+  /* color : oklch(70.4% 0.04 256.788); */
   /* @apply "text-lg"; */
   font-weight: 300;
   margin-bottom: 1em;
@@ -61,6 +65,7 @@ p {
 @layer base {
   :root {
     --background: 0 0% 100%;
+    /* --background : rgb(250, 255, 246); */
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -86,7 +91,7 @@ p {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  .dark {
+  /* .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -111,7 +116,7 @@ p {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-  }
+  } */
 }
 
 
@@ -125,6 +130,10 @@ p {
   }
 }
 
+.body, html {
+  background-color: var(--background);
+}
+
 .home-page-header::before, .home-page-header::after {
   content : "";
   flex: 1 1 auto;
@@ -132,4 +141,16 @@ p {
   /* transform: translateY(em); */
   margin-left : 5px;
   margin-right: 5px;
+}
+
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }

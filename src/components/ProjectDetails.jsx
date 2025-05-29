@@ -3,7 +3,7 @@ import React from 'react'
 const ProjectDetails = () => {
 
   return (
-    <div id="project-details" className="bg-white mb-24 hidden md:block" >
+    <div id="project-details" className=" mb-24 hidden md:block" >
 
         <div className='w-full px-24'>
             <h2 className="text-4xl font-bold mb-6">Requirements</h2>

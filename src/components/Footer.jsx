@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <div className='site-footer absolute bottom-0 mb-10 w-full flex items-center justify-center'>
  
-        <div className='actual-site-footer w-[40%] py-2 bg-white rounded-md shadow-md px-8 flex justify-between items-center border border-gray-100'>
+        <div className='actual-site-footer w-[90%] md:w-[40%] py-2 bg-white rounded-md shadow-md px-8 flex justify-between items-center border border-gray-100'>
 
             <div className='brady-copyright '>
                 <p className='font-bold text-sm my-0 '>© 2025 <span className="text-green-800">The Brady Scholars</span></p>

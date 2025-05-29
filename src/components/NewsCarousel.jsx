@@ -6,34 +6,40 @@ const NewsCarousel = () => {
     
     const newsStories = [
         {
-            imgSrc : '/images/blank.jpg',
-            title : "News Story",
-            content : "A news story about how lorem, and ipsum, these dolor sit amet. Truly, madly, deeply.",
-            url : "https://www.google.com"
+            imgSrc : '/images/news1.jpg',
+            title : "Suburban Chicago couple's market and ice cream parlor feeds their community",
+            url : "https://www.cbsnews.com/chicago/news/c-w-ice-market-evanston/"
         },
         {
-            imgSrc : '/images/blank.jpg',
-            title : "News Story",
-            content : "A news story about how lorem, and ipsum, these dolor sit amet. Truly, madly, deeply.",
-            url : "https://www.google.com"
+            imgSrc : '/images/news2.png',
+            title : "‘They serve the community unselfishly’: C&W Market expands help for those in need",
+            url : "https://evanstonroundtable.com/2022/02/23/they-serve-the-community-unselfishly-cw-market-expands-help-for-those-in-need/"
         },
         {
-            imgSrc : '/images/blank.jpg',
-            title : "News Story",
-            content : "A news story about how lorem, and ipsum, these dolor sit amet. Truly, madly, deeply.",
-            url : "https://www.google.com"
+            imgSrc : '/images/news3.jpeg',
+            title : "C&W Foundation brings food, jobs and growth to Evanston residents, students",
+            url : "https://dailynorthwestern.com/2023/01/19/lateststories/cw-foundation-brings-food-jobs-and-growth-to-evanston-residents-students/"
         },
         {
-            imgSrc : '/images/blank.jpg',
-            title : "News Story",
-            content : "A news story about how lorem, and ipsum, these dolor sit amet. Truly, madly, deeply.",
-            url : "https://www.google.com"
+            imgSrc : '/images/news4.png',
+            title : "C&W Market Foundation to host Cocktails for a Cause fundraiser to support community food insecurity",
+            url : "https://evanstonroundtable.com/2024/04/08/cw-market-foundation-to-host-cocktails-for-a-cause-fundraiser-to-support-community-food-insecurity/"
         },
+        {
+            imgSrc : "/images/news5.png",
+            title : "C&W Market expands food pantry operation with help from Northwestern, Rotary Club of Evanston",
+            url : "https://www.chicagotribune.com/2022/06/10/cw-market-expands-food-pantry-operation-with-help-from-northwestern-rotary-club-of-evanston/n"
+        },
+        {
+            imgSrc : "/images/news6.png",
+            title : "Sweet dream delivered: C&W Market opens ice cream parlor",
+            url : "https://evanstonroundtable.com/2023/06/24/a-dream-delivered-cw-market-opens-ice-cream-parlor/"
+        }
     ]
 
 
   return (
-    <div className='news-story-carousel w-[80%] overflow-visible '>
+    <div className='news-story-carousel w-[90%] md:w-[80%] overflow-visible px-5 hidden md:block'>
         <Carousel
             opts={{
                 loop : true,
@@ -45,15 +51,15 @@ const NewsCarousel = () => {
 
                 {
                     newsStories.map((story, idx) => (
-                        <CarouselItem className="basis-1/3  " key={idx}>
-                            <NewsStoryCard imgSrc={story.imgSrc} title={story.title} content={story.content} url={story.url} />
+                        <CarouselItem className=" md:basis-1/3 " key={idx}>
+                            <NewsStoryCard imgSrc={story.imgSrc} title={story.title} url={story.url} />
                         </CarouselItem>
                     ))
                 }
 
             </CarouselContent>
 
-            <CarouselPrevious />
+            <CarouselPrevious  />
             <CarouselNext />
         </Carousel>
     </div>

@@ -81,7 +81,7 @@ const GetInvolvedForm = () => {
     }
 
   return (
-    <div className='get-involved-form w-[50%]'>
+    <div className='get-involved-form w-full md:w-[90%] lg:w-[50%] mb-48 md:mb-10'>
       <Card>
 
         {/* title and cta */}
@@ -90,7 +90,7 @@ const GetInvolvedForm = () => {
                 Get Involved
             </CardTitle>
             <CardDescription>
-                Show your support for the hard work of the C&W Foundation, and for The Brady Scholars. Please feel free to pledge to make a donation of any size.
+                Show your support for the hard work of the C&W Market, and for The Brady Scholars. Please feel free to pledge to make a donation of any size.
             </CardDescription>
         </CardHeader>
 
@@ -101,7 +101,7 @@ const GetInvolvedForm = () => {
                 <form onSubmit={form.handleSubmit(handleSubmitLocal)} className="space-y-6 pr-10">
 
                   {/* first and last name side by side */}
-                  <div className="flex w-full justify-start items-end gap-2">
+                  <div className="flex flex-col md:flex-row w-full justify-start items-start md:items-end gap-2">
 
                     <FormField
                       control={form.control}

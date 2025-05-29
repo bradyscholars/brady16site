@@ -148,7 +148,7 @@ const NavBar = () => {
 
 
   return (
-    <div className='w-full flex items-center justify-center fixed top-5 z-50'>
+    <div className='w-full hidden md:flex items-center justify-center fixed top-5 z-50'>
 
 
         <nav className="flex z-50 items-center bg-white px-4 md:px-10 py-3 border border-gray-100 rounded-full shadow-lg mx-auto mt-6">

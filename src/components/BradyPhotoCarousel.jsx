@@ -10,9 +10,10 @@ const BradyPhotoCarousel = () => {
     const [emblaRef] = useEmblaCarousel({loop : true}, [Autoplay()]);
 
     const images = [
-        'blank.jpg',
-        'blank.jpg',
-        'blank.jpg',
+        'carousel1.png',
+        'carousel2.png',
+        'carousel3.png',
+        'carousel4.png',
     ]
 
     return (
@@ -22,8 +23,8 @@ const BradyPhotoCarousel = () => {
 
                 {
                     images.map((img, idx) => (
-                        <div className='embla__slide object-contain flex items-center justify-center' key={idx}>
-                            <img className='carousel-image ' src={`/images/${img}`} />
+                        <div className='embla__slide object-contain flex items-center justify-center w-[300px] h-[400px] overflow-hidden' key={idx}>
+                            <img className='carousel-image object-contain' src={`/images/${img}`} />
                         </div>
                     ))
                 }

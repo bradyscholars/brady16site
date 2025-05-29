@@ -14,15 +14,15 @@ const HomePageGetInvolved = () => {
 
   return (
 
-    <div className='about-the-project-section-full w-full px-10'>
+    <div className='about-the-project-section-full w-full px-10 hidden lg:block'>
 
-      <h1 className='m-0 p-0 font-black text-[5rem]'>OUR PROJECT</h1>
-      <h5 className='text-gray-600 m-0 p-0 mb-10'>Brady Scholars 16</h5>
+      <h1 className='m-0 p-0 font-black text-[3rem] md:text-[6rem] transform w-2/3 scale-x-[113%] origin-left '>OUR PROJECT</h1>
+      <h5 className='text-gray-600 m-0 p-0 mb-10 md:ml-4'>Brady Scholars 16</h5>
 
-      <div className='about-the-project-copy grid grid-cols-12 grid-rows-3 gap-4'>
+      <div className='about-the-project-copy grid grid-cols-12 grid-rows-3 gap-4 items-end '>
 
-        <div className='project-card-1 col-span-5 row-span-3'>
-          <Card>
+        <div className='project-card-1 h-full col-span-4 row-span-3'>
+          <Card className="h-full">
             <CardHeader>
               <CardTitle>
                 <h1 className='m-0 text-[1.8rem]'>Food Insecurity in the 5th Ward</h1>
@@ -30,7 +30,7 @@ const HomePageGetInvolved = () => {
             </CardHeader>
 
             <CardContent>
-              This project aims to increase C&W's long-term capacity to fight food insecurity in a more sustainable manner, by providing Evanston residents with year-round access to grocery-store quality goods, with an emphasis on produce and healthy protein options. Consistent produce consumption has many health benefits, including, but not limited to, lowered blood pressure and risk of heart disease and diabetes. Ultimately, this project aims to maximize C&W's organizational capacity to store and distribute grocery goods by renovating and expanding the market's refrigeration, ventilation, and storage space.
+              This project aims to increase C&W's long-term capacity to fight food insecurity in a more sustainable manner, by providing Evanston residents with year-round access to grocery-store quality goods, with an emphasis on produce and healthy protein options.  We hope to maximize C&W's organizational capacity to store and distribute grocery goods by renovating and expanding the market's refrigeration, ventilation, and storage space.
             </CardContent>
           </Card>
         </div>
@@ -49,9 +49,15 @@ const HomePageGetInvolved = () => {
           </Card>
         </div>
 
-        <div className='get-involved-button col-span-3 row-span-1 row-start-3 col-start-10 ml-5'>
-          <Button className='bg-green-800 hover:bg-green-900 shadow-lg w-full h-1/2  px-10 py-6 rounded-full mt-10' onClick={handleClick}>
-              <p className='text-white text-lg m-0 p-0 font-medium'>Get Involved →</p>
+        <div className='image-for-some-reason col-span-4 row-span-2'>
+
+          <img className='object-cover' src="/images/brady_scholars.png" />
+
+        </div>
+
+        <div className='get-involved-button col-span-4 row-span-1 row-start-3 col-start-9  w-full h-full  flex justify-center items-center '>
+          <Button className='bg-green-800 hover:bg-green-900 shadow-lg   px-12 py-8 rounded-full' onClick={handleClick}>
+              <p className='text-white text-xl m-0 p-0 font-bold'>Get Involved →</p>
           </Button>
         </div>
 

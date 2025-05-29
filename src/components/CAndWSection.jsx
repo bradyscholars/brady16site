@@ -1,19 +1,20 @@
 import React from 'react'
 import BigHeader from './BigHeader'
 import NewsCarousel from './NewsCarousel'
+import NewsCarouselMobile from './NewsCarouselMobile'
 
 
 const CAndWSection = () => {
   return (
-    <div className='c-and-w-section flex flex-col w-full items-center mb-24' id="candw">
+    <div className='c-and-w-section hidden md:flex flex-col w-full items-center mb-48' id="candw">
 
         {/* <div className="candw-delineator" id="candw" /> */}
         {/* <BigHeader text={"C&W FOUNDATION"}/> */}
 
         <div className='c-and-w-copy w-full flex justify-between items-center px-10 '>
 
-            <div className='b-and-w-photo w-[45%] h-full'>
-                <img className='w-full object-cover ' src='/images/blank.jpg' />
+            <div className='b-and-w-photo w-[48%] h-full'>
+                <img className='w-full object-cover ' src='/images/c_and_w_primary.png' />
             </div>
 
             <div className='c-and-w-copy w-[45%]'>
@@ -35,6 +36,7 @@ const CAndWSection = () => {
         {/* <NewsStoryCard imgSrc={'/images/blank.jpg'} title={"News Story"} content={"A news story about how lorem, and ipsum, these dolor sit amet. Truly, madly, deeply."} url={"https://www.google.com"} /> */}
 
         <NewsCarousel />
+        {/* <NewsCarouselMobile /> */}
         
     </div>
   )

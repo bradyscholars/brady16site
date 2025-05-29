@@ -1,5 +1,6 @@
 import React from 'react'
 import BigHeader from './BigHeader'
+import BradyPhotoCarousel from './BradyPhotoCarousel'
 import NewsCarousel from './NewsCarousel'
 
 const CAndWSectionMobile = () => {
@@ -18,7 +19,8 @@ const CAndWSectionMobile = () => {
 
             {/* image */}
             <div className='b-and-w-photo order-2 md:order-none w-full max-w-sm'>
-                <img className='w-full object-cover rounded-lg shadow-md' src='/images/c_and_w_primary.png' />
+                {/* <img className='w-full object-cover rounded-lg shadow-md' src='/images/c_and_w_primary.png' /> */}
+                <BradyPhotoCarousel />
             </div>
 
             {/* paragraph */}

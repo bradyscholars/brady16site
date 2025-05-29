@@ -51,7 +51,7 @@ const HomePageGetInvolved = () => {
 
         <div className='image-for-some-reason col-span-4 row-span-2'>
 
-          <img className='object-cover' src="/images/brady_scholars.png" />
+          <img className='object-cover' src="/images/c_and_w_primary.png" />
 
         </div>
 

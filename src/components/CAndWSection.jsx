@@ -1,7 +1,7 @@
 import React from 'react'
-import BigHeader from './BigHeader'
+import BradyPhotoCarousel from './BradyPhotoCarousel'
 import NewsCarousel from './NewsCarousel'
-import NewsCarouselMobile from './NewsCarouselMobile'
+// import NewsCarouselMobile from './NewsCarouselMobile'
 
 
 const CAndWSection = () => {
@@ -14,7 +14,8 @@ const CAndWSection = () => {
         <div className='c-and-w-copy w-full flex justify-between items-center px-10 '>
 
             <div className='b-and-w-photo w-[48%] h-full'>
-                <img className='w-full object-cover ' src='/images/c_and_w_primary.png' />
+                {/* <img className='w-full object-cover ' src='/images/c_and_w_primary.png' /> */}
+                <BradyPhotoCarousel />
             </div>
 
             <div className='c-and-w-copy w-[45%]'>

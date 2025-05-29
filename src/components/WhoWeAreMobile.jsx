@@ -13,7 +13,9 @@ const WhoWeAreMobile = () => {
 
         {/* image carousel */}
         <div className='brady-photo-carousel-mobile w-full max-w-sm mb-6'>
-            <BradyPhotoCarousel />
+            {/* <BradyPhotoCarousel /> */}
+            <img className='w-full object-cover rounded-lg shadow-md' src='/images/brady_scholars.png' />
+
         </div>
 
         {/* paragraph */}

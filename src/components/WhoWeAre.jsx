@@ -16,7 +16,8 @@ const WhoWeAre = () => {
         </div>
 
         <div className='brady-photo-carousel w-[45%] h-full'>
-            <BradyPhotoCarousel />
+            {/* <BradyPhotoCarousel /> */}
+            <img className='w-full object-cover rounded-lg shadow-md' src='/images/brady_scholars.png' />
         </div>
         
     </div>

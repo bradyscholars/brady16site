@@ -10,9 +10,9 @@ const BradyPhotoCarousel = () => {
     const [emblaRef] = useEmblaCarousel({loop : true}, [Autoplay()]);
 
     const images = [
+        'carousel3.png',
         'carousel1.png',
         'carousel2.png',
-        'carousel3.png',
         'carousel4.png',
     ]
 

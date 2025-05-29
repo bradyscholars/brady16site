@@ -26,7 +26,8 @@ const HomePageGetInvolvedMobile = () => {
       <div className='about-the-project-copy grid grid-cols-1 gap-6 items-center justify-items-center md:grid-cols-12 md:grid-rows-3 md:gap-4 md:items-end'>
 
         <div className='image-for-some-reason col-span-1 w-full max-w-sm mx-auto order-1 md:order-none md:col-span-4 md:row-span-2'>
-          <img className='object-cover w-full h-auto rounded-lg shadow-md' src="/images/brady_scholars.png" />
+          <img className='object-cover w-full h-auto rounded-lg shadow-md' src="/images/c_and_w_primary.png" />
+
         </div>
 
         <div className='project-card-1 col-span-1 w-full max-w-sm mx-auto order-2 md:order-none md:col-span-4 md:row-span-3'>

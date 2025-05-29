@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 // import * as ReactHookForm from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
@@ -17,6 +17,7 @@ import {
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
+import { ClipLoader } from 'react-spinners';
 
 // const { useForm } = ReactHookForm;
 
@@ -40,7 +41,11 @@ const formSchema = z.object({
 
 const GetInvolvedForm = () => {
 
-    
+    // 0 == open form
+    // 1 == loading form
+    // honestly i'm not gonna concern myself with failures. it should be working lol.
+
+    const [loadingState, setLoadingState] = useState(0);
 
     const form = useForm({
         resolver : zodResolver(formSchema),
@@ -58,6 +63,7 @@ const GetInvolvedForm = () => {
     const handleSubmitLocal = async (values) => {
 
       // set a state indicating work is in progress
+      setLoadingState(1);
       // console.log(`trying to send email with : \n ${JSON.stringify(values)}`)
 
       // send the email over the api
@@ -73,7 +79,7 @@ const GetInvolvedForm = () => {
 
       // if succ has statuscode 200, indicate success
 
-
+      setLoadingState(0);
       // if succ has statuscode 500 (or anything but 200) -- indicae failure
       console.log(succ.status, succ.text);
 
@@ -97,7 +103,7 @@ const GetInvolvedForm = () => {
         {/* intake form in the card */}
         <CardContent>
 
-            <Form {...form}>
+            <Form {...form} className="relative">
                 <form onSubmit={form.handleSubmit(handleSubmitLocal)} className="space-y-6 pr-10">
 
                   {/* first and last name side by side */}
@@ -197,6 +203,18 @@ const GetInvolvedForm = () => {
 
                 </form>
             </Form>
+
+            {
+              loadingState === 1 && (
+                <div className='loading-comp w-full h-full bg-white absolute inset-0 flex justify-center items-center'>
+                  <ClipLoader
+                    size={48}
+                    color="#15803D"
+                    loading={true}
+                  />
+                </div>
+              )
+            }
 
         </CardContent>
 

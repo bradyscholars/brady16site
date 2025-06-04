@@ -13,6 +13,8 @@ const WhoWeAre = () => {
             <p>
             The Brady Scholars is a three-year program at Northwestern aiming to connect the study of ethics to community service and civic engagement. The program includes a series of classes on moral and political philosophy, a study-abroad component where students are encouraged to consider ethics in a global and comparative context, and a senior capstone project. The Brady Scholars 16s cohort (graduating June 2026) has chosen to address food insecurity in Evanston’s 5th Ward for their senior capstone project.
             </p>
+
+            <a className='text-lg text-[rgb(19, 36, 14)] underline' href="https://www.instagram.com/brady_scholars_16s/" target={"_blank"}>Visit us on Instagram.</a>
         </div>
 
         <div className='brady-photo-carousel w-[45%] h-full'>

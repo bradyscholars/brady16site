@@ -1,14 +1,14 @@
 
 import { sendEmail } from '../../lib/sendEmail'
 
-const allowedOrigin1 = "https://brady16s.org";
-const allowedOrigin2 = "https://www.brady16s.org";
+//, "http://localhost:3000"
+const allowedOrigins = new Set(["localhost:3000", "https://www.brady16s.org"]);
 
 
 export async function POST(req) { // Request type
 
     const origin = req.headers.get('origin')
-    if (origin !== allowedOrigin1 && origin !== allowedOrigin2) {
+    if (origin && !allowedOrigins.has(origin)) {
         return new Response('Forbidden', { status: 403 })
     }
 

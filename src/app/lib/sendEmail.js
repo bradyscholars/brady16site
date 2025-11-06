@@ -1,11 +1,10 @@
-import sgMail from '@sendgrid/mail'
+import { Resend } from "resend";
 
-const apiKey = process.env.SENDGRID_API_KEY;
-sgMail.setApiKey(apiKey);
+const apiKey = process.env.RESEND_API_KEY;
+const resend = new Resend(apiKey)
 
 export async function sendEmail({firstName, lastName, email, phone, comments, pledgeVal}) {
 
-    console.log()
     const message = `
         You have received a new pledge from ${firstName} ${lastName}. \n
         ${firstName} ${lastName} has pledged $${pledgeVal}${comments ? `, with the comments : ${comments}` : '.'}\n
@@ -16,17 +15,24 @@ export async function sendEmail({firstName, lastName, email, phone, comments, pl
     `;
 
     const msg = {
-        to: 'bradyscholars16@gmail.com',
-        from: 'no-reply@brady16s.org', // works because domain is authenticated
-        subject: `New Message From ${firstName}`,
-        replyTo: email,
-        text: message
+        from: process.env.RESEND_FROM,
+        to: "bradyscholars16@gmail.com",
+        subject: `New Message from ${firstName}`,
+        text: message,
+        replyTo: email
     };
 
     try {
-        const response = await sgMail.send(msg);
-        console.log('Email sent successfully:', response[0].statusCode);
-        return true;
+        const {data, error} = await resend.emails.send(msg);
+
+        if (error) {
+            console.error('Resend Error! ', error);
+            return false
+        }
+
+        console.log("Email sent, id:", data?.id);
+
+        return true
 
     } catch (error) {
         console.error('Error sending email:', error.response?.body || error.message);
